@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+class lamp //lamp class definition starts here
+{
+private:
+    string brand;
+    string category;
+    string supply;
+    float watt;
+    double cost;
+
+public:
+    lamp(string b, string c, string s, float wa, double price) //setting values through constructor
+    {
+
+        brand = b;
+        category = c;
+        supply = s;
+        watt = wa;
+        cost = price;
+    }
+    lamp(lamp &obj)
+    {
+        obj.brand = brand;
+        obj.category = category;
+        obj.supply = supply;
+        obj.watt = watt;
+        obj.cost = cost;
+    }
+    ~lamp() //destructor
+    {
+        cout << "\nobject destroyed";
+    }
+
+    void display() //display function to dispaly data
+    {
+
+        cout << "\nbrand: " << brand;
+        cout << "\ncategory:" << category;
+        cout << "\nPower supply:" << supply;
+        cout << "\nwatt:" << watt;
+        cout << "\nCOST:" << cost;
+    }
+};
+int main()
+{
+    lamp lamp1("Syska", "LED", "AC", 9.00, 180); //parameterized constructor
+    lamp1.display();
+    lamp lamp2 = lamp1; //copy constructor called
+    lamp2.display();
+}
