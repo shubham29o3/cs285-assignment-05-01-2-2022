@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+class Lamp //definition of class starts here
+{
+private:
+    string brand;    //brand name
+    string category; //category type
+    string supply;   // power supply type
+    float watt;      // energy of the lamp
+    double cost;     //cost of lamp
+
+public:
+    void setData(string b, string c, string s, float wa, double price) //to set the data
+    {
+
+        brand = b;
+        category = c;
+        supply = s;
+        watt = wa;
+        cost = price;
+    }
+
+    void display() //to display the data
+    {
+
+        cout << "\nbrand: " << brand;
+        cout << "\ncategory:" << category;
+        cout << "\nPower supply:" << supply;
+        cout << "\nwatt:" << watt;
+        cout << "\nCOST:" << cost;
+    }
+};
+int main()
+{
+    Lamp lamp1;                                     //object of lamp class created
+    lamp1.setData("Phylips", "Led", "AC", 12, 240); //calling an member function to set the data
+    lamp1.display();                                //calling an member function to display data
+}
